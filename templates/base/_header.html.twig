@@ -1,45 +1,55 @@
 <header>
-      <nav class="navbar navbar-expand-lg navbar-mainbg">
-        <a href="#" class="navbar-brand navbar-logo">Build Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Togglenavigation"> <i class="fas fa-bars text-white"></i></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <div class="hori-selector">
-                    <div class="left">
-
-                    </div>
-                    <div class="right">
-
-                    </div>
-
-                </div>
-                <li class="nav-item">
-                    <a href="#Dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                </li>
-                <li class="nav-item active">
-                     <a href="#Address" class="nav-link"><i class="far fa-address-book"></i>Address Book</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Components" class="nav-link"><i class="far fa-clone"></i>Components</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Calender" class="nav-link"><i class="far fa-calendar-alt"></i>Calendar</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Charts" class="nav-link"><i class="far fa-chart-bar"></i>Charts</a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Documents" class="nav-link"><i class="far fa-copy"></i>Documents</a>
-                </li>
-
-
-
-            </ul>
-        </div>
-    </nav>
-
+	<nav class="navbar navbar-expand-lg navbar-mainbg">
+		<a href=" {{path('home')}} " class="navbar-brand navbar-logo"><img src="{{ asset('img/logo.png') }}" alt="" style="width:20%;margin-left:10px;"><img src="{{ asset('img/game happen.png') }}" alt="" style="width:78%;">
+		{# <h1 class="ml2">Game Happen</h1> #}
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Togglenavigation">
+			<i class="fas fa-bars text-white"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<div class="hori-selector">
+					<div class="left"></div>
+					<div class="right"></div>
+				</div>
+				<li class="nav-item">
+					<a class="nav-link {{ route_name == 'home' ? 'active'}}" href=" {{path('home')}} " class="nav-link">
+						<i class="fas fa-home"></i>Acceuil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {{ route_name == 'contact_pro' ? 'active'}}" href=" {{path('contact_pro')}} " class="nav-link">
+						<i class="fas fa-envelope"></i>Contact Us</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ path('listing') }}" class="nav-link {{ route_name == 'listing' ? 'active'}}">
+						<i class="fas fa-list-ul"></i>Liste jeux</a>
+				</li>
+				<li class="nav-item">
+					{% if is_granted('ROLE_USER') %}
+						<li class="nav-item">
+							<a class="nav-link {{ route_name == 'admin' ? 'active'}} {{ route_name == 'member' ? 'active'}}" href="{{path ('redirect_user')}}">
+								<i class="fas fa-user-alt"></i>Mon compte
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link {{ route_name == 'app_logout' ? 'active'}}" href=" {{path('app_logout')}} ">
+								<i class="fas fa-power-off"></i>Deconnexion
+							</a>
+						</li>
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link {{ route_name == 'app_login' ? 'active'}}" href=" {{path('app_login')}} ">
+								<i class="fas fa-sign-in-alt"></i>Se connecter
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link {{ route_name == 'app_register' ? 'active'}}" href="{{path('app_register')}} ">
+								<i class="fas fa-user-plus"></i>S'inscrire
+							</a>
+						</li>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</nav>
 </header>

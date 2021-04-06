@@ -14,19 +14,8 @@ class BaseController extends AbstractController
      */
     public function index(): Response
     {
-        // Requète à la BDD
-        $prenom = 'Victor';
-
-        // ...
-
-        $prenoms = [ 'Fred', 'Paul', 'Joe' ];
-
-        $produit = [ 'nom' => 'Mon produit', 'prix' => 9.99, 'stock' => 0 ];
 
         return $this->render('base/home.html.twig', [
-            'prenom' => '',
-            'prenoms' => $prenoms,
-            'produit' => $produit,
         ]);
     }
 

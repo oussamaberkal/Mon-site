@@ -1,3 +1,6 @@
+AOS.init();
+
+
 
 function test(){
     var tabsNewAnim = $
