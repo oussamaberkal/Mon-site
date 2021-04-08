@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello MembresController!
+{% endblock %}
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<div class="text-center mt-5">
+					<h1 style="text-decoration:underline;">Espace Membre</h1>
+				</div>
+
+				<div class="col-md-10 mx-auto mt-5" style="border:1px solid black;border-radius:15px;">
+					<div class="text-center">
+						<a href=" {{path('modifier_mdp')}} ">Modifier le mot de passe</a>
+						|
+						<a href=" {{path('modifier-email')}} ">Modifier l'email</a>
+						|
+						<a href=" {{path('modifier-pseudo')}} ">Modifier le Pseudonyme</a>
+					</div>
+
+				</ul>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

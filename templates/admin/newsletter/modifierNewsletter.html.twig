@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Modifier newsletter
+{% endblock %}
+
+{% block body %}
+
+	{# <a href="{{ path('espace_admin') }}">&larr; Retour</a>
+	
+		<h1>Modifier une Newsletter</h1>
+	
+		{{ form(form) }} #}
+
+
+	<div class="container">
+		<div class="row mt-5 mb-5">
+			<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="aos">
+				<div class="col-lg-12 mx-auto">
+					<a href="{{ path('espace_admin') }}" class="btn btn-outline-primary">&larr; Retour</a>
+
+					<div class="text-center">
+						<h1>Modifier une Newsletter</h1>
+					</div>
+					<div class="col" style="border:1px solid black; border-radius:15px; padding:20px">
+
+						{{ form(form) }}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{Jeux.nom}}{% endblock %}
+
+{% block body %}
+
+    <article class="article">
+        <div class="img-ratio" style="--ratio: 40%;">
+            <div class="img">
+                <img src="{{ asset('images/' ~ Jeux.image) }}" alt="" class="w-100">
+            </div>
+        </div>
+
+        <div class="my-4">
+        <h2>{{ Jeux.nom }}</h2>
+        </div>
+
+        <div class="my-4">
+        <h4> Editeur {{ Jeux.editeur }} | Développeur {{ Jeux.dev }}</h4>
+        <p>il y a eu {{ Jeux.vuesJeux }} visite sur cet article</p>
+        </div>
+
+        <div class="mt-3">
+            <div class="lead">Date de sortie {{ Jeux.dateSortie|date('d/m/Y') }} </div>
+        </div>
+
+        <div class="my-4">
+        {{ Jeux.description|nl2br }}
+        </div>
+
+        <div class="">
+            <div class="lead"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ Jeux.lienYoutube }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </article>
+
+
+
+{% endblock %}

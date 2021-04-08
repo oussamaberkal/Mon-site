@@ -1,0 +1,17 @@
+{% extends "email/base.html.twig" %}
+
+{% block body %}
+
+    Bonjour Admin ! <br>
+    Vous venez de recevoir une demande de contact PRO :
+
+    <br><br>
+
+    Pseudo : {{ contactPro.pseudo}} <br>
+    Email : {{ contactPro.email }} <br>
+    Sujet : {{ contactPro.subject }} <br>
+    Message : <br><br>
+    {{ contactPro.message|nl2br }} <br>
+
+
+{% endblock %}

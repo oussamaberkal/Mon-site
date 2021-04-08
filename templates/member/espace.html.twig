@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon espace
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-6 mx-auto">
+
+				<div class="text-center mt-5">
+					<h1 style="text-decoration:underline;">Mon Compte</h1>
+				</div>
+
+
+				<div class="col-md-10 mx-auto mt-5" style="border:1px solid black;border-radius:15px;">
+					<div class="text-center">
+
+						{% if is_granted('ROLE_ADMIN') %}
+
+							<a href=" {{path('espace_admin')}} ">
+								Mon espace admin</a>
+							|
+						{% endif %}
+
+
+						<a href=" {{path('espace_membre')}} ">
+							Mon espace membre</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+{% endblock %}

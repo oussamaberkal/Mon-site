@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Liste Jeu
+{% endblock %}
+
+{% block body %}
+	<div class="container" style=" border:1px solid black;border-radius:15px; padding:20px; margin-top:50px; margin-bottom:50px;">
+
+
+		<a href="{{ path('espace_admin') }} " class="btn btn-outline-primary">&larr; Retour</a>
+
+		<h1>Liste Catégorie</h1>
+
+		<a href="{{ path('ajouter_categorie') }}" class="btn btn-primary">Ajouter Categorie</a>
+
+		<div class="row mt-2">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nom categorie</th>
+						<th scope="col">Slug categorie</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for categorie in categories %}
+						<tr>
+							<th scope="row">{{ categorie.id }}</th>
+							<td>{{ categorie.categorie }}</td>
+							<td>{{ categorie.slug }}</td>
+							<td>
+								<a href="{{ path('suppimer_categorie', {id: categorie.id}) }}" style="color: red;">
+									<i class="fas fa-trash"></i>
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+
+{% endblock %}

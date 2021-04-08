@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace administrateur
+{% endblock %}
+
+{% block body %}
+	{# <div class="container">
+
+		<div class="row">
+			<h1>Espace administrateur</h1>
+
+			<div
+				class="col-lg-12 mx-auto">
+
+				<hr>
+
+				<ul style="list-style:none;">
+					<h2>
+						<i class="fas fa-angle-right"></i>Categorie</h2>
+					<li>
+						<a href="{{ path('ajouter_categorie') }}" class="btn btn-outline-primary">Ajouter Categories</a>
+						<a href="{{ path('liste_categorie') }}" class="btn btn-outline-primary">Liste Categorie</a>
+
+					</li>
+					<hr>
+
+					<h2>
+						<i class="fas fa-angle-right"></i>Jeu</h2>
+					<li>
+						<a href="{{ path('ajouter_jeu') }}" class="btn btn-outline-primary">Ajouter Jeu</a>
+						<a href="{{ path('liste_jeu') }}" class="btn btn-outline-primary">Liste Jeu</a>
+
+					</li>
+
+					<hr>
+					<h2>
+						<i class="fas fa-angle-right"></i>Newsletter</h2>
+					<li>
+						<a href="{{ path('cree_newsletter') }}" class="btn btn-outline-primary">Création newsletter</a>
+						<a href="{{ path('liste_newsletter') }}" class="btn btn-outline-primary">Liste newsletter</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div> #}
+
+
+	<div class="container">
+		<div class="row mt-5 mb-5">
+			<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" class="aos">
+				<div class="col-lg-12 mx-auto">
+					<div class="text-center">
+						<h1>Espace administrateur</h1>
+					</div>
+					<div class="col" style="border:1px solid black; border-radius:15px; padding:20px">
+						<ul style="list-style:none;">
+							<h2>
+								<i class="fas fa-list-alt" style="margin-right:10px"></i>Categorie</h2>
+							<li>
+								<a href="{{ path('ajouter_categorie') }}" class="btn btn-outline-primary">Ajouter Categories</a>
+								<a href="{{ path('liste_categorie') }}" class="btn btn-outline-primary">Liste Categorie</a>
+							</li>
+							<hr>
+							<h2>
+								<i class="fas fa-gamepad" style="margin-right:10px"></i>Jeu</h2>
+							<li>
+								<a href="{{ path('ajouter_jeu') }}" class="btn btn-outline-primary">Ajouter Jeu</a>
+								<a href="{{ path('liste_jeu') }}" class="btn btn-outline-primary">Liste Jeu</a>
+							</li>
+							<hr>
+							<h2>
+								<i class="fas fa-paper-plane" style="margin-right:10px"></i>Newsletter</h2>
+							<li>
+								<a href="{{ path('cree_newsletter') }}" class="btn btn-outline-primary">Création newsletter</a>
+								<a href="{{ path('liste_newsletter') }}" class="btn btn-outline-primary">Liste newsletter</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

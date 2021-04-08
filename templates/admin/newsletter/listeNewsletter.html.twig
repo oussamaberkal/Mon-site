@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Liste Newletter
+{% endblock %}
+
+
+{% block body %}
+	<div class="container" style=" border:1px solid black;border-radius:15px; padding:20px; margin-top:50px; margin-bottom:50px;">
+
+
+		<a href="{{ path('espace_admin') }}">&larr; Retour</a>
+
+		<h1>Liste Newsletter Enregistrée</h1>
+
+		<a href="{{ path('cree_newsletter') }}" class="btn btn-primary">Cree Newsletter</a>
+
+		<div class="row mt-2">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Objet</th>
+						<th scope="col">Text</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for newsletter in newsletters %}
+						<tr>
+							<th scope="row">{{ newsletter.id }}</th>
+							<td>{{ newsletter.objet }}</td>
+							<td>{{ newsletter.text}}</td>
+							<td>
+								<a href="{{ path('modifier_newsletter', {id: newsletter.id}) }}" class="btn btn-primary">Modifier</a>
+								<a href="{{ path('suppimer_newsletter', {id: newsletter.id}) }}" class="btn btn-primary">Supprimer</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+{% endblock %}
